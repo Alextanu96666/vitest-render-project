@@ -21,7 +21,17 @@ const products = [
 export let cart = []
 
 export function getProducts() {
-    return 'Hej världen';
+    // return 'Hej världen';
+    console.info('Fetching products');
+    console.info('Products:', products);
+
+    try {
+        // Simulate fetching products
+        console.info('Simulating product fetch...');
+    } catch (error) {
+        console.error('Error fetching products:', error);
+    }
+    
     return products;
 }
 
