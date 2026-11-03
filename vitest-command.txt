@@ -1,0 +1,30 @@
+Vitest metoder och funktioner
+
+toBe() = Jämför värden med strikt likhet
+toEqual() = Jämför innehållet i objekt och arrayer
+toBeTruthy() = Kontrollerar om värdet är truthy
+toBeFalsy() = Kontrollerar om värdet är falsy
+toBeNull() = Kontrollerar om värdet är null
+toBeUndefined() = Kontrollerar om värdet är undefined
+toBeDefined() = Kontrollerar om värdet är definierat
+toContain() = Kontrollerar om en array eller sträng innehåller ett specifikt värde
+toThrow() = Kontrollerar om en funktion kastar ett fel
+toBeGreaterThan() = Kontrollerar om ett värde är större än ett annat
+toBeGreaterThanOrEqual() = Kontrollerar om ett värde är större än eller lika med ett annat
+toBeLessThan() = Kontrollerar om ett värde är mindre än ett annat
+toBeLessThanOrEqual() = Kontrollerar om ett värde är mindre än eller lika med ett annat
+toMatch() = Kontrollerar om en sträng matchar ett reguljärt uttryck
+toHaveLength() = Kontrollerar om en array eller sträng har en specifik längd
+toHaveProperty() = Kontrollerar om ett objekt har en specifik egenskap
+toBeInstanceOf() = Kontrollerar om ett objekt är en instans av en specifik klass
+toContain() = Kontrollerar om en array eller sträng innehåller ett specifikt värde
+
+beforeEach() = Kör en funktion innan varje test
+afterEach() = Kör en funktion efter varje test
+beforeAll() = Kör en funktion innan alla tester
+afterAll() = Kör en funktion efter alla tester
+
+describe() = Grupperar relaterade tester tillsammans
+it() = Definierar ett enskilt testfall
+test() = Alias för it(), definierar ett enskilt testfall
+expect() = Skapar ett förväntat värde som kan användas med matchers som toBe(), toEqual(), etc.
