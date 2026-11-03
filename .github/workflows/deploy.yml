@@ -22,5 +22,5 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Install dependencies
-        run: echo "Installing dependencies..."
+      - name: Trigger Render deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
