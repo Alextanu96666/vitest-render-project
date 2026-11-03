@@ -21,6 +21,7 @@ const products = [
 export let cart = []
 
 export function getProducts() {
+    return 'Hej världen';
     return products;
 }
 
