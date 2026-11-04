@@ -1,6 +1,10 @@
 import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
+
 const port = 3000;
 
 const products = [
@@ -20,39 +24,58 @@ const products = [
 
 export let cart = []
 
+const logFile = path.join(path.dirname(fileURLToPath(import.meta.url)), 'log.txt');
+
+function log(message, data) {
+    const line = data === undefined
+        ? `[${new Date().toISOString()}] ${message}\n`
+        : `[${new Date().toISOString()}] ${message} ${JSON.stringify(data)}\n`;
+    fs.appendFileSync(logFile, line);
+}
+
 export function getProducts() {
     // return 'Hej världen';
-    console.info('Fetching products');
-    console.info('Products:', products);
+    log('Fetching products');
+    log('Products:', products);
 
     try {
         // Simulate fetching products
-        console.info('Simulating product fetch...');
+        log('Simulating product fetch...');
     } catch (error) {
-        console.error('Error fetching products:', error);
+        log('Error fetching products:', error.message);
     }
-    
+
     return products;
 }
 
 export function deleteProduct(product) {
     const index = products.indexOf(product);
+    log('Deleting product:', product);
     if (index > -1) {
         products.splice(index, 1);
+        log('Product deleted successfully:', product);
+    } else {
+        log('Product not found for deletion:', product);
     }
 }
 
 export function createProduct(product) {
+    log('Creating product:', product);
     products.push(product);
+    log('Product created successfully:', product);
 }
 
 export function addToCart(product) {
+    log('Adding to cart:', product);
     cart.push(product);
+    log('Product added to cart successfully:', product);
 }
 
 
 export function removeFromCart(product) {
+    log('Removing from cart:', product);    
     cart.splice(cart.indexOf(product), 1);
+    log('Product removed from cart successfully:', product);
 }
 
 
